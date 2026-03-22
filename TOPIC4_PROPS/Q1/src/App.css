@@ -1,0 +1,117 @@
+:root {
+  --primary-violet: #4c1d95; /* Deep Violet */
+  --bg-gradient: radial-gradient(circle, #7c3aed 0%, #4c1d95 100%);
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 90%;
+  max-width: 1100px;
+  background: var(--bg-gradient);
+  border-radius: 40px;
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.nav-pill {
+  background: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.nav-pill.active {
+  background: white;
+  color: black;
+}
+
+/* Card Layout */
+.card-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.product-title {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 300px;
+  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
+  border-radius: 20px; /* Matching the soft look */
+}
+
+.qty-dot {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  margin-left: 10px;
+  font-size: 0.8rem;
+}
+
+.qty-dot.active {
+  background: white;
+  color: black;
+}
+
+/* Footer */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.footer-left { width: 30%; font-size: 0.7rem; opacity: 0.8; }
+
+.price { font-size: 2.5rem; margin: 0; }
+
+.counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  margin-right: 20px;
+}
+
+.buy-btn {
+  background: white;
+  color: black;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,0 +1,151 @@
+:root {
+  --bg-dark: #1e1e21; /* Matches dark theme background */
+  --card-bg: #232327;
+  --accent-orange: #ff5722; /* Branding color from DashOn */
+  --text-gray: #a0a0a5;
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --shadow-light: rgba(255, 255, 255, 0.03);
+}
+
+/* --- Centering Logic --- */
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--bg-dark);
+  margin: 0;
+}
+
+/* --- Aesthetic UI Styling --- */
+.login-card {
+  background: var(--card-bg);
+  padding: 50px 40px;
+  border-radius: 30px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 20px 20px 40px var(--shadow-dark), 
+              -5px -5px 20px var(--shadow-light);
+  text-align: center;
+}
+
+.dash-logo {
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.dash-logo span { color: var(--accent-orange); }
+
+.description {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  margin-bottom: 35px;
+}
+
+.input-group {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.input-group label {
+  display: block;
+  color: var(--text-gray);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-toggle {
+  color: #6c5ce7;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.input-group input {
+  width: 100%;
+  background: var(--bg-dark);
+  border: none;
+  padding: 16px;
+  border-radius: 12px;
+  color: white;
+  outline: none;
+  box-shadow: inset 4px 4px 8px rgba(0,0,0,0.5), 
+              inset -2px -2px 6px rgba(255,255,255,0.05);
+}
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input.input-error {
+  box-shadow: inset 4px 4px 8px rgba(255, 0, 0, 0.2), 
+              inset -2px -2px 6px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 87, 34, 0.5);
+}
+
+.error-text {
+  color: #ff5722; 
+  font-size: 0.7rem;
+  font-weight: 500;
+  position: absolute;
+  bottom: -18px;
+  left: 5px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-bottom: 30px;
+}
+
+.remember-me { color: var(--text-gray); cursor: pointer; }
+.forgot-pass { color: var(--accent-orange); text-decoration: none; }
+
+.login-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent-orange);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(255, 87, 34, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.login-btn:active { transform: scale(0.98); }
+
+.signup-link {
+  margin-top: 30px;
+  color: var(--text-gray);
+  font-size: 0.85rem;
+}
+
+.signup-link span { color: #6c5ce7; font-weight: 700; cursor: pointer; }

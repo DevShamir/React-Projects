@@ -1,0 +1,296 @@
+/* Import Poppins Font to match the UI */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-purple: #7451f8;
+  --primary-purple-hover: #5d3ce0;
+  --bg-color: #fcfcfd;
+  --text-dark: #111111;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  
+  /* Pastel Card Backgrounds */
+  --bg-light-blue: #e8f2fe;
+  --bg-light-yellow: #fff8e1;
+  --bg-light-green: #e6f7ec;
+  --bg-light-gray: #f3f4f6;
+  --bg-light-purple: #f3e8ff;
+  --bg-light-pink: #fce7f3;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Changed: Removed max-width, using 100vw and viewport padding for full stretch */
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30px 4vw; /* 4vw gives flexible margins on wide screens */
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.icon-btn {
+  background: var(--white);
+  border: 1px solid #e5e7eb;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #f9fafb;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Hero Banner - Now stretches fully */
+.hero-banner {
+  background-color: #f5f3ff;
+  border-radius: 32px;
+  padding: 50px 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(116, 81, 248, 0.05);
+}
+
+.hero-content {
+  max-width: 600px; /* Keeps text readable on ultra-wide monitors */
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.shop-now-link {
+  color: var(--primary-purple);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.shop-now-link:hover {
+  transform: translateX(5px);
+}
+
+.hero-image-wrapper {
+  width: 45%;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 2;
+}
+
+.hero-img {
+  max-width: 100%;
+  height: auto;
+  transform: scale(1.1) rotate(-10deg);
+}
+
+/* Category Navigation */
+.category-nav {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 15px; 
+  margin-bottom: 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.category-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  padding: 12px 30px;
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  border-radius: 50px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.category-pill.active {
+  background: var(--primary-purple);
+  color: var(--white);
+  border-color: var(--primary-purple);
+  box-shadow: 0 8px 16px rgba(116, 81, 248, 0.25);
+}
+
+/* Product Grid - Adjusted to fill wide screens beautifully */
+.product-grid {
+  display: grid;
+  /* Auto-fill will create as many columns as fit on screen */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* Product Card */
+.product-card {
+  border-radius: 32px;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Background Color Classes */
+.bg-light-blue { background-color: var(--bg-light-blue); }
+.bg-light-yellow { background-color: var(--bg-light-yellow); }
+.bg-light-green { background-color: var(--bg-light-green); }
+.bg-light-gray { background-color: var(--bg-light-gray); }
+.bg-light-purple { background-color: var(--bg-light-purple); }
+.bg-light-pink { background-color: var(--bg-light-pink); }
+
+.product-badge {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  background: #ffdb4d; 
+  color: #000;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.product-image-container {
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.product-image {
+  max-width: 85%;
+  max-height: 100%;
+  object-fit: contain;
+  mix-blend-mode: darken; 
+}
+
+.product-details {
+  margin-bottom: 25px;
+  flex-grow: 1;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+  color: var(--text-light);
+}
+
+.product-price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--text-dark);
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  width: 100%;
+  padding: 16px;
+  background: var(--white);
+  color: var(--text-dark);
+  border: none;
+  border-radius: 24px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.product-card:hover .add-to-cart-btn {
+  background: var(--text-dark);
+  color: var(--white);
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+  .hero-banner {
+    flex-direction: column;
+    padding: 40px 5vw;
+    text-align: center;
+  }
+  
+  .hero-content {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.8rem;
+  }
+
+  .hero-image-wrapper {
+    width: 80%;
+    justify-content: center;
+  }
+  
+  .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

@@ -1,0 +1,86 @@
+:root {
+  --bg-color: #f0f0f5;
+  --violet: #6c5ce7;
+  --text-gray: #8e8e93;
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --shadow-light: rgba(255, 255, 255, 0.8);
+}
+
+.main-viewport {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* The Pill Shape */
+.pill-button {
+  width: 90px;
+  height: 45px;
+  border-radius: 50px;
+  border: none;
+  background: var(--bg-color);
+  box-shadow: inset 4px 4px 8px var(--shadow-dark), 
+              inset -4px -4px 8px var(--shadow-light);
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  transition: all 0.4s ease;
+}
+
+/* The Sliding Circle Inside */
+.icon-container {
+  width: 35px;
+  height: 35px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 4px 10px rgba(108, 92, 231, 0.3);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Movement Logic */
+.pill-button.dark .icon-container {
+  transform: translateX(45px);
+  background: var(--violet);
+}
+
+/* Icon Animation */
+.icon {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.sun { color: #f39c12; opacity: 1; }
+.moon { color: white; opacity: 0; }
+
+.pill-button.dark .sun { opacity: 0; transform: rotate(40deg); }
+.pill-button.dark .moon { opacity: 1; transform: rotate(0deg); }
+
+/* Text Styling */
+.toggle-label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 1px;
+  color: var(--text-gray);
+  min-width: 100px; /* Prevents layout jump when text changes */
+  transition: color 0.3s ease;
+}
+
+.pill-button.dark + .toggle-label {
+  color: var(--violet);
+}

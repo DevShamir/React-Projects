@@ -1,0 +1,210 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --ned-red: #b91c1c;
+  --ned-red-hover: #991b1b;
+  --soft-bg: #eaeff5; 
+  --white: #ffffff;
+  --text-dark: #111111;
+  --text-label: #4b5563; 
+  --shadow-main: 15px 15px 35px #c3cadd, -15px -15px 35px #ffffff;
+  --shadow-inset: inset 5px 5px 10px #c3cadd, inset -5px -5px 10px #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Montserrat', sans-serif; 
+  background-color: var(--soft-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Center Wrapper */
+.app-viewport {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--soft-bg);
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.admission-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* The Main Container Card */
+.wide-card {
+  width: 100%;
+  max-width: 950px;
+  background: var(--soft-bg); 
+  padding: 60px 70px;
+  border-radius: 40px;
+  box-shadow: var(--shadow-main);
+}
+
+/* Header Adjustments */
+.form-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.uni-logo {
+  width: 110px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.red-title {
+  color: var(--ned-red);
+  font-size: 2.4rem;
+  font-weight: 800; 
+  letter-spacing: 1.5px;
+  margin: 0 0 5px 0;
+}
+
+.subtitle {
+  color: var(--text-label);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.section-divider {
+  grid-column: 1 / -1;
+  color: var(--ned-red);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 45px 0 25px 0;
+  border-bottom: 2px solid rgba(185, 28, 28, 0.15);
+  padding-bottom: 12px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px 40px;
+}
+
+.full-width {
+  grid-template-columns: 1fr;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-label);
+  margin-left: 5px; 
+  letter-spacing: 0.3px;
+}
+
+.input-group input, 
+.input-group select {
+  width: 100%;
+  background-color: var(--soft-bg); 
+  border: 2px solid transparent;
+  padding: 16px 20px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-inset);
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark); 
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.input-group input::placeholder {
+  color: #8fa0b3;
+  font-weight: 400;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+  border: 2px solid var(--ned-red);
+  background-color: var(--soft-bg); 
+  box-shadow: none; 
+}
+
+.input-group select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234b5563' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2em;
+  padding-right: 2.5rem;
+}
+
+.input-group input.error-border,
+.input-group select.error-border {
+  border: 2px solid var(--ned-red);
+}
+
+.err-msg {
+  color: var(--ned-red);
+  font-size: 0.75rem;
+  margin-top: 8px;
+  margin-left: 5px;
+  font-weight: 500;
+  display: block;
+}
+
+.submit-btn-ned {
+  width: 100%;
+  margin-top: 60px;
+  padding: 22px;
+  background: var(--ned-red);
+  color: var(--white);
+  border: none;
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(185, 28, 28, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.submit-btn-ned:hover {
+  transform: translateY(-4px);
+  background: var(--ned-red-hover);
+  box-shadow: 0 15px 30px rgba(185, 28, 28, 0.45);
+}
+
+.submit-btn-ned:active {
+  transform: translateY(1px);
+  box-shadow: 0 5px 15px rgba(185, 28, 28, 0.25);
+}
+
+@media (max-width: 850px) {
+  .wide-card {
+    padding: 50px 30px;
+    border-radius: 30px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 25px; 
+  }
+  .red-title {
+    font-size: 1.8rem;
+  }
+}

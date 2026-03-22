@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-purple: #7451f8;
+  --primary-purple-hover: #5d3ce0;
+  --bg-color: #fcfcfd;
+  --text-dark: #111111;
+  --text-light: #6b7280;
+  --white: #ffffff;
+  --pastel-lavender: #f5f3ff;
+  --border-light: #e5e7eb;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.app-container {
+  width: 100vw;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 30px 5vw; 
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--primary-purple);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.icon-btn {
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-dark);
+}
+
+.icon-btn:hover {
+  background: var(--pastel-lavender);
+  border-color: var(--primary-purple);
+  color: var(--primary-purple);
+}
+
+/* Action Banner (Form Area) */
+.action-banner {
+  background-color: var(--pastel-lavender);
+  border-radius: 32px;
+  padding: 40px 5vw;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(116, 81, 248, 0.05);
+}
+
+.banner-content {
+  margin-bottom: 30px;
+}
+
+.banner-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  color: var(--text-dark);
+}
+
+.banner-content p {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.add-student-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 120px;
+}
+
+.name-group {
+  flex: 2; /* Make the name field wider */
+  min-width: 200px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid var(--white);
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.form-group input:focus {
+  border-color: var(--primary-purple);
+  box-shadow: 0 0 0 4px rgba(116, 81, 248, 0.15);
+}
+
+.primary-btn {
+  padding: 15px 30px;
+  background: var(--primary-purple);
+  color: var(--white);
+  border: none;
+  border-radius: 16px;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 16px rgba(116, 81, 248, 0.25);
+}
+
+.primary-btn:hover {
+  background: var(--primary-purple-hover);
+  transform: translateY(-2px);
+}
+
+.primary-btn:active {
+  transform: translateY(0);
+}
+
+/* Table Section */
+.table-section {
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Scroll horizontally on small screens */
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px; /* Creates the space between rows */
+  min-width: 700px;
+}
+
+.student-table th {
+  text-align: left;
+  padding: 0 30px;
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.student-table tr {
+  background: var(--white);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.student-table tbody tr {
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+}
+
+.student-table tbody tr:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(116, 81, 248, 0.08);
+}
+
+.student-table td {
+  padding: 25px 30px;
+  color: var(--text-light);
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+/* Round the corners of the first and last cells to make row look like a pill/card */
+.student-table td:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-left: 1px solid transparent;
+}
+
+.student-table td:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-right: 1px solid transparent;
+}
+
+.fw-bold { font-weight: 700; }
+.fw-medium { font-weight: 500; }
+.text-dark { color: var(--text-dark) !important; }
+
+.total-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-purple) !important;
+}
+
+.empty-state {
+  text-align: center !important;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .add-student-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .form-group, .name-group {
+    width: 100%;
+  }
+  
+  .action-banner {
+    padding: 30px 5vw;
+  }
+  /* --- Delete Button UI --- */
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #fee2e2; /* Soft pastel red */
+  color: #ef4444; /* Bright red text */
+  border: none;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #fca5a5; /* Slightly darker red on hover */
+  color: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.2);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+.delete-btn svg {
+  margin-top: -1px; /* Optically centers the icon */
+}
+}

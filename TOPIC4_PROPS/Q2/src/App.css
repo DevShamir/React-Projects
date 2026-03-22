@@ -1,0 +1,133 @@
+:root {
+  --deep-violet: #2e1065;
+  --vibrant-violet: #7c3aed;
+  --white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app-container {
+  width: 95%;
+  max-width: 1200px;
+  background: radial-gradient(circle at top, #6d28d9 0%, #2e1065 100%);
+  border-radius: 40px;
+  padding: 50px;
+  color: white;
+  min-height: 80vh;
+}
+
+/* Header Section */
+.list-header {
+  margin-bottom: 40px;
+}
+
+.list-header h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.list-header p {
+  opacity: 0.7;
+  font-size: 0.9rem;
+}
+
+/* Grid Layout */
+.student-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Student Card */
+.student-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.student-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.student-id { font-size: 0.8rem; opacity: 0.6; }
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.active { background: #10b981; }
+.away { background: #f59e0b; }
+
+.student-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.student-name { margin: 10px 0 5px 0; font-size: 1.4rem; }
+.student-course { font-size: 0.85rem; opacity: 0.7; margin-bottom: 20px; }
+
+.student-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.grade-pill {
+  background: white;
+  color: var(--deep-violet);
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+.view-profile-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  padding: 6px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.view-profile-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Navbar Pills */
+.nav-pill {
+  background: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.nav-pill.active { background: white; color: black; }

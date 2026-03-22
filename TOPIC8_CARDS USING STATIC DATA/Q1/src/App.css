@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #1e2541; /* Dark-blue background from FFF project */
+  --text-light: #ffffff;
+  --text-muted: #9ca3af;
+  --card-white: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+
+/* --- Centered, full-screen wrapper --- */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers title and grid horizontally */
+  justify-content: flex-start; /* Aligns content from top, allows scroll if full */
+  padding-top: 50px; /* Space below the navbar */
+  min-height: calc(100vh - 50px);
+}
+
+/* --- Fixed Navbar Position --- */
+.top-header {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  z-index: 1000;
+}
+
+/* Skewed Navbar Design from project */
+.skewed-nav {
+  background: var(--card-white);
+  padding: 10px 30px;
+  border-radius: 10px;
+  transform: skewX(-20deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.skewed-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 25px;
+  transform: skewX(20deg); /* Unskew the text */
+}
+
+.skewed-nav li {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+/* Hover/Active State of Navbar with dark background */
+.skewed-nav li.active, .skewed-nav li:hover {
+  background-color: #0f172a;
+  color: var(--card-white);
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* --- "Strikers" Title Styling --- */
+.section-title {
+  color: rgba(255,255,255,0.1); /* Highly faded text */
+  font-size: 4rem;
+  font-weight: 800;
+  margin-top: 100px; /* Space after navbar */
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Responsive Player Grid --- */
+.player-grid {
+  display: grid;
+  /* Auto-fill columns that are at least 250px wide */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  width: 90%; /* Grid doesn't touch screen edges */
+  max-width: 1200px; /* Prevents becoming too wide on huge screens */
+  margin-bottom: 50px;
+}
+
+/* --- The Player Card with number detail --- */
+.player-card {
+  background: var(--card-white);
+  border-radius: 20px;
+  padding: 20px;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Puts info at the bottom */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.player-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.4);
+}
+
+/* Faint Large Number Background Detail */
+.card-number-bg {
+  position: absolute;
+  top: -20px;
+  right: -10px;
+  font-size: 10rem;
+  font-weight: 800;
+  color: rgba(0,0,0,0.03); /* Extremely faded color */
+  z-index: 1;
+}
+
+.player-image {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 240px;
+  object-fit: cover;
+  z-index: 2;
+  /* Masking the bottom to fade seamlessly into the card */
+  mask-image: linear-gradient(to top, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 50%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 50%);
+}
+
+.card-info {
+  position: relative;
+  z-index: 3; /* Above number and image */
+  color: #0f172a; /* Dark-blue text for cards */
+}
+
+.card-info .first-name {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.card-info .last-name {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.card-info .player-role {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #374151; /* Gray text for role */
+  margin-top: 5px;
+}
+
+/* --- Media Queries for specific breakpoints --- */
+/* Smaller Tablets */
+@media (max-width: 900px) {
+  .top-header { left: 15px; top: 15px; }
+  .skewed-nav { padding: 8px 15px; gap: 15px; }
+  .skewed-nav li { font-size: 0.7rem; gap: 10px; }
+  .section-title { font-size: 3rem; margin-top: 80px; }
+  .player-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .player-card { height: 280px; }
+  .card-number-bg { font-size: 8rem; top: -10px; right: -5px;}
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .section-title { font-size: 2.5rem; }
+  .player-grid { grid-template-columns: 1fr; width: 95%; gap: 20px; }
+  .player-card { height: 260px; padding: 15px; }
+  .player-image { width: 180px; height: 220px; bottom: 70px; }
+  .card-info .last-name { font-size: 1.4rem; }
+}
